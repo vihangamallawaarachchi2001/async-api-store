@@ -1,6 +1,6 @@
 {
   "name": "async-api-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "description": "A lightweight Node.js library to dynamically manage and call APIs with TypeScript support.",
@@ -9,7 +9,13 @@
     "build": "tsc",
     "start": "node dist/index.js"
   },
-  "keywords": ["async", "api", "store", "axios", "typescript"],
+  "keywords": [
+    "async",
+    "api",
+    "store",
+    "axios",
+    "typescript"
+  ],
   "author": "Vihanga Mallawaarachchi <vihanganethusara00@gmail.com>",
   "license": "MIT",
   "devDependencies": {
