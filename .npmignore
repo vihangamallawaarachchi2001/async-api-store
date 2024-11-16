@@ -1,0 +1,5 @@
+echo node_modules/ > .npmignore
+echo src/ >> .npmignore
+echo test/ >> .npmignore
+echo tsconfig.json >> .npmignore
+echo dist/*.map >> .npmignore
