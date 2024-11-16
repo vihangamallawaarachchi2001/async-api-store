@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "module": "commonjs", // Use CommonJS for Jest compatibility
+      "target": "es6",
+      "strict": true,
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true
+    },
+    "include": ["src/**/*", "test/**/*"], // Include test and source files
+    "exclude": ["node_modules", "dist"]
+  }
+  
