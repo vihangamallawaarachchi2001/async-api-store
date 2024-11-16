@@ -1,7 +1,9 @@
-
-//src/index.ts
 import ApiStore from './apiParser';
 import apiConfig from './exampleApiStore';
 
-const apiStore = new ApiStore('http://localhost:3000/api', apiConfig);
-export const apiMethods = apiStore.createApiMethods();
+const baseUrl = process.env.API_BASE_URL || 'http://localhost:3000/api'; 
+
+const apiStore = new ApiStore(baseUrl, apiConfig);
+const apiMethods = apiStore.createApiMethods();
+
+export { ApiStore, apiMethods };

@@ -1,4 +1,4 @@
-
+Here’s the updated `README.md` with changes reflecting the new configuration flexibility for the base URL and usage:
 
 ---
 
@@ -18,6 +18,7 @@ Effortlessly structure and manage your API calls in a modern, reusable way.
 - Simplifies request handling with a single initialization.
 - Easily extendable for additional functionality.
 - TypeScript-ready with strong typing support.
+- Flexible base URL configuration (default to `http://localhost:3000/api`).
 
 ---
 
@@ -56,14 +57,15 @@ module.exports = {
 ---
 
 ### Step 2: Initialize the API Store
-Set up the module in your project:
+Set up the module in your project. You can specify a custom base URL (default is `http://localhost:3000/api`):
 ```javascript
 // index.js
 const { ApiStore } = require('async-api-store');
 const apiConfig = require('./apiStore');
 
-// Initialize API Store
-const apiStore = new ApiStore('https://example.com/api', apiConfig);
+// Initialize API Store with a custom base URL or use default
+const baseUrl = process.env.API_BASE_URL || 'http://localhost:3000/api'; // Set base URL dynamically or use the default
+const apiStore = new ApiStore(apiConfig, baseUrl);
 const apiMethods = apiStore.createApiMethods();
 
 module.exports = { apiMethods };
@@ -141,6 +143,29 @@ try {
 
 ---
 
+## **Flexible Base URL Configuration**
+You can specify a custom base URL for your API when initializing the `ApiStore`. If no base URL is provided, the default will be used (`http://localhost:3000/api`).
+
+1. **Set Environment Variable**
+   - In `.env` or similar files:
+     ```
+     API_BASE_URL=http://localhost:5000/api
+     ```
+
+   - In your application:
+     ```javascript
+     const baseUrl = process.env.API_BASE_URL || 'http://localhost:3000/api'; // Dynamically load the base URL
+     const apiStore = new ApiStore(apiConfig, baseUrl);
+     ```
+
+2. **Pass Base URL Directly**
+   - You can also pass a custom base URL directly when initializing the `ApiStore`:
+     ```javascript
+     const apiStore = new ApiStore(apiConfig, 'http://localhost:5000/api');
+     ```
+
+---
+
 ## **Built-In Enhancements**
 ### TypeScript Support
 Use TypeScript to ensure strong typing in your project. The `ApiStore` class includes typings for methods and endpoints.
@@ -187,3 +212,5 @@ Contributions are welcome! If you have suggestions, bug reports, or feature requ
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
+
+This updated `README.md` provides clear instructions on configuring the base URL, as well as a flexible setup for users to adjust it based on their environment or preferences.

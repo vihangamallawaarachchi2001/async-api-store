@@ -1,4 +1,3 @@
-//src/apiParser.ts
 import axios from 'axios';
 
 interface Endpoint {
@@ -11,7 +10,7 @@ class ApiStore {
     private baseUrl: string;
     private endpoints: Record<string, Endpoint>;
 
-    constructor(baseUrl: string, endpoints: Record<string, Endpoint>) {
+    constructor(baseUrl: string = 'http://localhost:3000/api', endpoints: Record<string, Endpoint>) {
         this.baseUrl = baseUrl;
         this.endpoints = endpoints;
     }
@@ -37,7 +36,6 @@ class ApiStore {
     
         return apiMethods;
     }
-    
 }
 
 export default ApiStore;

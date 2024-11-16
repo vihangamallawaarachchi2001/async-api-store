@@ -1,13 +1,6 @@
-//src/exampleApiStore.ts
-export default {
-    getUsers: { 
-        method: 'GET',
-        url: '/users',
-        returnType: 'array',
-    },
-    createUser: {
-        method: 'POST',
-        url: '/users',
-        returnType: 'object'
-    }
+const apiConfig = {
+    fetchUsers: { method: 'GET', url: '/users', returnType: 'array' },
+    createUser: { method: 'POST', url: '/users', returnType: 'object' },
 };
+
+export default apiConfig;
