@@ -210,7 +210,3 @@ Contributions are welcome! If you have suggestions, bug reports, or feature requ
 
 ## **License**
 This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-This updated `README.md` provides clear instructions on configuring the base URL, as well as a flexible setup for users to adjust it based on their environment or preferences.
